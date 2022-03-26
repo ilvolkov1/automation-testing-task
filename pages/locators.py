@@ -1,13 +1,13 @@
 from selenium.webdriver.common.by import By
 
 
-class BasePageLocators():
+class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "/login")
     REGISTER_LINK = (By.CSS_SELECTOR, "/register")
     BASKET_BUTTON = (By.CSS_SELECTOR, "/cart")
 
 
-class RegisterPageLocators():
+class RegisterPageLocators:
     FIRST_NAME_TEXT_FIELD = (By.CSS_SELECTOR, "#FirstName")
     LAST_NAME_TEXT_FIELD = (By.CSS_SELECTOR, "#LastName")
     EMAIL_TEXT_FIELD = (By.CSS_SELECTOR, "#Email")
@@ -16,10 +16,11 @@ class RegisterPageLocators():
     REGISTER_BUTTON = (By.CSS_SELECTOR, "#register-button")
 
 
-class LoginPageLocators():
+class LoginPageLocators:
     EMAIL_TEXT_FIELD = (By.CSS_SELECTOR, "#Email")
     PASSWORD_TEXT_FIELD = (By.CSS_SELECTOR, "#Password")
     LOGIN_BUTTON = (By.CSS_SELECTOR, ".login-button")
 
-class ChangePasswordPageLocators():
+
+class ChangePasswordPageLocators:
     pass
