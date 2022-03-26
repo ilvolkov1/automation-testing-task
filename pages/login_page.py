@@ -18,3 +18,6 @@ class LoginPage(BasePage):
         self.get_page_element(*LoginPageLocators.EMAIL_TEXT_FIELD).send_keys(email)
         self.get_page_element(*LoginPageLocators.PASSWORD_TEXT_FIELD).send_keys(password)
         self.get_page_element(*LoginPageLocators.LOGIN_BUTTON).click()
+
+    def should_be_logged_in(self, email):
+        assert str(email) in self.get_page_element(*LoginPageLocators.HEADER_EMAIL).text, "You are not logged in"
