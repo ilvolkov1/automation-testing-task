@@ -1,5 +1,3 @@
-import time
-
 from pages.register_page import RegisterPage
 import names
 
@@ -15,6 +13,3 @@ def test_guest_can_register(browser):
     email = first_name + last_name + "@fakemail.org"
     register_page.register_new_user(first_name, last_name, email, password)
     register_page.should_be_success_message()
-
-
-
