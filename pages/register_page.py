@@ -17,6 +17,9 @@ class RegisterPage(BasePage):
         assert self.is_element_present(*RegisterPageLocators.PASSWORD_TEXT_FIELD), "Can't find Register password text field"
         assert self.is_element_present(*RegisterPageLocators.CONFIRM_PASSWORD_TEXT_FIELD), "Can't find Register password confirmation text field"
 
+    def should_be_success_message(self):
+        assert "Your registration completed" in self.get_page_element(*RegisterPageLocators.REGISTER_SUCCESS_MESSAGE).text, "No success message"
+
     def register_new_user(self, first_name, last_name, email, password):
         self.get_page_element(*RegisterPageLocators.FIRST_NAME_TEXT_FIELD).send_keys(first_name)
         self.get_page_element(*RegisterPageLocators.LAST_NAME_TEXT_FIELD).send_keys(last_name)
