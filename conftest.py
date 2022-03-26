@@ -7,3 +7,4 @@ def browser():
     browser = webdriver.Chrome()
     yield browser
     browser.quit()
+
