@@ -5,6 +5,7 @@ class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "/login")
     REGISTER_LINK = (By.CSS_SELECTOR, "/register")
     BASKET_BUTTON = (By.CSS_SELECTOR, "/cart")
+    LOGOUT_LINK = (By.CSS_SELECTOR, ".ico-logout")
 
 
 class RegisterPageLocators:
