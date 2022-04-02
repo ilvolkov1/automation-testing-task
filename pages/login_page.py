@@ -3,6 +3,8 @@ from .locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
+    login_page_link = "http://demowebshop.tricentis.com/login"
+
     def should_be_login_page(self):
         self.should_be_login_url()
         self.should_be_login_form()
@@ -15,8 +17,17 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.PASSWORD_TEXT_FIELD), "Can't find Login Password text field"
 
     def log_in(self, email, password):
+        self.fill_email(email)
+        self.fill_password(password)
+        self.click_login_button()
+
+    def fill_email(self, email):
         self.get_page_element(*LoginPageLocators.EMAIL_TEXT_FIELD).send_keys(email)
+
+    def fill_password(self, password):
         self.get_page_element(*LoginPageLocators.PASSWORD_TEXT_FIELD).send_keys(password)
+
+    def click_login_button(self):
         self.get_page_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
     def should_be_logged_in(self, email):
