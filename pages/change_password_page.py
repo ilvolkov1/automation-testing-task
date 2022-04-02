@@ -27,7 +27,7 @@ class ChangePasswordPage(BasePage):
         self.get_page_element(*ChangePasswordPageLocators.NEW_PASSWORD_TEXT_FIELD).send_keys(new_password)
 
     def fill_new_password_confirmation(self, new_password):
-        self.get_page_element(*ChangePasswordPageLocators.NEW_PASSWORD_TEXT_FIELD).send_keys(new_password)
+        self.get_page_element(*ChangePasswordPageLocators.CONFIRM_NEW_PASSWORD_TEXT_FIELD).send_keys(new_password)
 
     def click_button_change_password(self):
         self.get_page_element(*ChangePasswordPageLocators.CHANGE_PASSWORD_BUTTON).click()
