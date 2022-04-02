@@ -3,7 +3,7 @@ from pages.login_page import LoginPage
 
 
 def test_user_can_log_in(browser, create_new_user):
-    link = "http://demowebshop.tricentis.com/login"
+    link = LoginPage.login_page_link
     data = create_new_user
     email = data[0]
     password = data[1]

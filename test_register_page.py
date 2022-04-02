@@ -3,7 +3,7 @@ import names
 
 
 def test_guest_can_register(browser):
-    link = "http://demowebshop.tricentis.com/register"
+    link = RegisterPage.register_page_link
     first_name = names.get_first_name()
     last_name = names.get_last_name()
     password = "12345678"

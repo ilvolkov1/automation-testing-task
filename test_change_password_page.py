@@ -4,8 +4,8 @@ from pages.login_page import LoginPage
 
 
 def test_user_can_change_password(browser, create_new_user):
-    login_link = "http://demowebshop.tricentis.com/login"
-    change_password_link = "http://demowebshop.tricentis.com/customer/changepassword"
+    login_link = LoginPage.login_page_link
+    change_password_link = ChangePasswordPage.change_password_page_link
     data = create_new_user
     email = data[0]
     password = data[1]
