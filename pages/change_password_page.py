@@ -3,7 +3,7 @@ from .locators import ChangePasswordPageLocators
 
 
 class ChangePasswordPage(BasePage):
-    change_password_link = "http://demowebshop.tricentis.com/customer/changepassword"
+    change_password_page_link = "http://demowebshop.tricentis.com/customer/changepassword"
 
     def should_be_change_password_page(self):
         self.should_be_change_password_url()
