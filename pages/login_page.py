@@ -32,3 +32,6 @@ class LoginPage(BasePage):
 
     def should_be_logged_in(self, email):
         assert str(email) in self.get_page_element(*LoginPageLocators.HEADER_EMAIL).text, "You are not logged in"
+
+    def should_be_warning_message_about_incorrect_credentials(self):
+        assert "The credentials provided are incorrect" in self.get_page_element(*LoginPageLocators.INCORRECT_CREDENTIALS_MESSAGE).text, "No incorrect credentials message"
