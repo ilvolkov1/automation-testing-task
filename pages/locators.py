@@ -24,6 +24,7 @@ class LoginPageLocators:
     PASSWORD_TEXT_FIELD = (By.CSS_SELECTOR, "#Password")
     LOGIN_BUTTON = (By.CSS_SELECTOR, ".login-button")
     HEADER_EMAIL = (By.CSS_SELECTOR, ".header .account")
+    INCORRECT_CREDENTIALS_MESSAGE = (By.CSS_SELECTOR, ".message-error li")
 
 
 class ChangePasswordPageLocators:
