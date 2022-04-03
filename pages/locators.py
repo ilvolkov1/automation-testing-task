@@ -16,6 +16,7 @@ class RegisterPageLocators:
     CONFIRM_PASSWORD_TEXT_FIELD = (By.CSS_SELECTOR, "#ConfirmPassword")
     REGISTER_BUTTON = (By.CSS_SELECTOR, "#register-button")
     REGISTER_SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".page-body .result")
+    EXISTING_EMAIL_MESSAGE = (By.CSS_SELECTOR, ".message-error li")
 
 
 class LoginPageLocators:
