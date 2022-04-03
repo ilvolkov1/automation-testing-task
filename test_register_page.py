@@ -1,7 +1,9 @@
 from pages.register_page import RegisterPage
 import names
+import pytest
 
 
+@pytest.mark.smoke
 def test_guest_can_register(browser):
     link = RegisterPage.register_page_link
     first_name = names.get_first_name()

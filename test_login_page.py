@@ -1,8 +1,10 @@
 import time
 from pages.login_page import LoginPage
 from testdata import TestUser
+import pytest
 
 
+@pytest.mark.smoke
 def test_user_can_log_in(browser):
     link = LoginPage.login_page_link
     email = TestUser.email

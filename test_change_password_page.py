@@ -2,8 +2,10 @@ import time
 from pages.change_password_page import ChangePasswordPage
 from pages.login_page import LoginPage
 from testdata import TestUser
+import pytest
 
 
+@pytest.mark.smoke
 def test_user_can_change_password(browser):
     login_link = LoginPage.login_page_link
     change_password_link = ChangePasswordPage.change_password_page_link
