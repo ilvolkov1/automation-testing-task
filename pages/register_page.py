@@ -22,6 +22,9 @@ class RegisterPage(BasePage):
     def should_be_success_message(self):
         assert "Your registration completed" in self.get_page_element(*RegisterPageLocators.REGISTER_SUCCESS_MESSAGE).text, "No success message"
 
+    def should_be_message_about_email_already_exist(self):
+        assert "The specified email already exists" in self.get_page_element(*RegisterPageLocators.EXISTING_EMAIL_MESSAGE).text, "No warning message"
+
     def fill_first_name(self, first_name):
         self.get_page_element(*RegisterPageLocators.FIRST_NAME_TEXT_FIELD).send_keys(first_name)
 
