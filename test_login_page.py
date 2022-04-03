@@ -1,12 +1,12 @@
 import time
 from pages.login_page import LoginPage
+from testdata import TestUser
 
 
-def test_user_can_log_in(browser, create_new_user):
+def test_user_can_log_in(browser):
     link = LoginPage.login_page_link
-    data = create_new_user
-    email = data[0]
-    password = data[1]
+    email = TestUser.email
+    password = TestUser.password
     login_page = LoginPage(browser, link)
     login_page.open()
     login_page.should_be_login_page()
