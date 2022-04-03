@@ -20,6 +20,9 @@ class ChangePasswordPage(BasePage):
     def should_be_success_message(self):
         assert "Password was changed" in self.get_page_element(*ChangePasswordPageLocators.SUCCESS_MESSAGE).text, "No success message"
 
+    def should_be_warning_message_about_wrong_old_password(self):
+        assert "Old password doesn't match" in self.get_page_element(*ChangePasswordPageLocators.OLD_PASSWORD_DOESNT_MATCH_MESSAGE).text, "No warning message about wrong old password"
+
     def fill_old_password(self, old_password):
         self.get_page_element(*ChangePasswordPageLocators.OLD_PASSWORD_TEXT_FIELD).send_keys(old_password)
 
