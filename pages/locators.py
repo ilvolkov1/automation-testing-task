@@ -34,3 +34,20 @@ class ChangePasswordPageLocators:
     CHANGE_PASSWORD_BUTTON = (By.CSS_SELECTOR, ".change-password-button")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".result")
     OLD_PASSWORD_DOESNT_MATCH_MESSAGE = (By.CSS_SELECTOR, ".message-error li")
+
+
+class CartPageLocators:
+    CART_HEADER = (By.CSS_SELECTOR, "h1")
+    UPDATE_CART_BUTTON = (By.CSS_SELECTOR, "updatecart")
+    CART_TOTAL_VALUE = (By.CSS_SELECTOR, "order-total")
+
+
+class ProductPageLocators:
+    PRODUCT_DETAILS_FORM = (By.CSS_SELECTOR, "form#product-details-form")
+    ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, ".add-to-cart-button")
+    PRODUCT_VALUE = (By.CSS_SELECTOR, ".product-price span")
+
+
+class CategoryPageLocators:
+    CATEGORY_PAGE_FORM = (By.CSS_SELECTOR, "category-page")
+    ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, ".buttons .product-box-add-to-cart-button")
