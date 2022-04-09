@@ -3,6 +3,7 @@ from .locators import ProductPageLocators
 
 
 class ProductPage(BasePage):
+    product_page_link = "http://demowebshop.tricentis.com/health"
 
     def should_be_product_page(self):
         self.should_be_product_details_form()
@@ -15,3 +16,6 @@ class ProductPage(BasePage):
 
     def get_product_value(self):
         return self.get_page_element(*ProductPageLocators.PRODUCT_VALUE).text
+
+    def should_be_success_message(self):
+        assert "The product has been added to your shopping cart" in self.get_page_element(*ProductPageLocators.SUCCESS_MESSAGE_ADDED_TO_CART).text, "You did not added item to the cart"
