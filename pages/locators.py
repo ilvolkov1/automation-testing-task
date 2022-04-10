@@ -38,8 +38,12 @@ class ChangePasswordPageLocators:
 
 class CartPageLocators:
     CART_HEADER = (By.CSS_SELECTOR, "h1")
-    UPDATE_CART_BUTTON = (By.CSS_SELECTOR, "updatecart")
-    CART_TOTAL_VALUE = (By.CSS_SELECTOR, "order-total")
+    UPDATE_CART_BUTTON = (By.CSS_SELECTOR, "input[name=updatecart]")
+    CART_TOTAL_VALUE = (By.CSS_SELECTOR, ".product-price")
+    REMOVE_FROM_CART_CHECKBOX = (By.CSS_SELECTOR, ".cart-item-row input[type=checkbox]")
+    SUMMARY_CONTENT_CART_MESSAGE = (By.CSS_SELECTOR, ".order-summary-content")
+    QUANTITY_TEXT_FIELD = (By.CSS_SELECTOR, ".qty-input")
+    PRODUCT_UNIT_PRICE = (By.CSS_SELECTOR, ".product-unit-price")
 
 
 class ProductPageLocators:
@@ -53,3 +57,8 @@ class CategoryPageLocators:
     CATEGORY_PAGE_FORM = (By.CSS_SELECTOR, ".category-page")
     ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, ".buttons .product-box-add-to-cart-button")
     SUCCESS_MESSAGE_ADDED_TO_CART = (By.CSS_SELECTOR, "#bar-notification .content")
+
+
+class OrderPageLocators:
+
+    pass
