@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import CartPageLocators
+import time
 
 
 class CartPage(BasePage):
@@ -20,3 +21,28 @@ class CartPage(BasePage):
 
     def get_total_cart_value(self):
         return self.get_page_element(*CartPageLocators.CART_TOTAL_VALUE).text
+
+    def clear_cart(self):
+        elements = self.get_page_elements(*CartPageLocators.REMOVE_FROM_CART_CHECKBOX)
+        if len(elements) != 0:
+            for element in elements:
+                element.click()
+            self.get_page_element(*CartPageLocators.UPDATE_CART_BUTTON).click()
+
+    def should_be_empty_cart(self):
+        assert "Your Shopping Cart is empty!" in self.get_page_element(*CartPageLocators.SUMMARY_CONTENT_CART_MESSAGE).text, "Cart is not empty"
+
+    def increase_quantity_by_one(self):
+        num = int(self.get_page_element_attribute(*CartPageLocators.QUANTITY_TEXT_FIELD, "value"))
+        self.get_page_element(*CartPageLocators.QUANTITY_TEXT_FIELD).clear()
+        self.get_page_element(*CartPageLocators.QUANTITY_TEXT_FIELD).send_keys(num+1)
+
+    def should_be_changed_total_cart_value(self):
+        total_cart_value = float(self.get_total_cart_value())
+        price = float(self.get_price())
+        self.increase_quantity_by_one()
+        self.update_shopping_cart()
+        assert float(self.get_total_cart_value()) == total_cart_value+price, "total value didn't changed"
+
+    def get_price(self):
+        return self.get_page_element(*CartPageLocators.PRODUCT_UNIT_PRICE).text
