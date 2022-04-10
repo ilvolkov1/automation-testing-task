@@ -1,9 +1,10 @@
 import selenium.common.exceptions
 from .locators import BasePageLocators
+import selenium
 
 
 class BasePage:
-    def __init__(self, browser, url, timeout=10):
+    def __init__(self, browser, url, timeout=2):
         self.browser = browser
         self.url = url
         self.browser.implicitly_wait(timeout)
@@ -29,3 +30,11 @@ class BasePage:
     def get_page_element(self, how, what):
         element = self.browser.find_element(how, what)
         return element
+
+    def get_page_element_attribute(self, how, what, attribute):
+        element = self.browser.find_element(how, what)
+        return element.get_attribute(attribute)
+
+    def get_page_elements(self, how, what):
+        elements = self.browser.find_elements(how, what)
+        return elements
