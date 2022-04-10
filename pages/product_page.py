@@ -13,6 +13,7 @@ class ProductPage(BasePage):
 
     def add_to_cart(self):
         self.get_page_element(*ProductPageLocators.ADD_TO_CART_BUTTON).click()
+        self.should_be_success_message()
 
     def get_product_value(self):
         return self.get_page_element(*ProductPageLocators.PRODUCT_VALUE).text
