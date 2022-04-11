@@ -2,6 +2,7 @@ from pages.cart_page import CartPage
 from pages.product_page import ProductPage
 from pages.category_page import CategoryPage
 from pages.login_page import LoginPage
+from pages.order_page import OrderPage
 from testdata import TestUser
 import time
 import pytest
@@ -26,6 +27,7 @@ def add_to_cart(browser):
     return product_page
 
 
+@pytest.mark.smoke
 class TestUserCanAddToBasketAndClearBasket:
 
     def test_user_can_add_product_to_cart_from_product_page(self, browser):
@@ -60,13 +62,24 @@ def test_user_can_update_cart(browser):
     link = CartPage.cart_page_link
     cart_page = CartPage(browser, link)
     cart_page.open()
-    time.sleep(5)
     cart_page.should_be_changed_total_cart_value()
 
 
+@pytest.mark.smoke
 def test_user_can_make_order(browser):
     log_in(browser)
     add_to_cart(browser)
     link = CartPage.cart_page_link
     cart_page = CartPage(browser, link)
     cart_page.open()
+    cart_page.check_terms_of_service_checkbox()
+    cart_page.click_checkout_button()
+    order_page = OrderPage(browser, OrderPage.order_page_link)
+    order_page.fill_billing_address_form(TestUser.first_name, TestUser.last_name, TestUser.email)
+    order_page.click_billing_address_continue_button()
+    order_page.click_shipping_address_continue_button()
+    order_page.click_shipping_method_continue_button()
+    order_page.click_payment_method_continue_button()
+    order_page.click_payment_information_continue_button()
+    order_page.click_confirm_order_button()
+    order_page.should_be_success_message()
