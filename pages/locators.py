@@ -44,6 +44,8 @@ class CartPageLocators:
     SUMMARY_CONTENT_CART_MESSAGE = (By.CSS_SELECTOR, ".order-summary-content")
     QUANTITY_TEXT_FIELD = (By.CSS_SELECTOR, ".qty-input")
     PRODUCT_UNIT_PRICE = (By.CSS_SELECTOR, ".product-unit-price")
+    AGREEMENT_CHECKBOX = (By.CSS_SELECTOR, "div #termsofservice")
+    CHECKOUT_BUTTON = (By.CSS_SELECTOR, "div #checkout")
 
 
 class ProductPageLocators:
@@ -60,5 +62,19 @@ class CategoryPageLocators:
 
 
 class OrderPageLocators:
-
-    pass
+    BILLING_ADDRESS_DROPDOWN = (By.CSS_SELECTOR, "div #billing-address-select")
+    BILLING_ADDRESS_FIRST_NAME = (By.CSS_SELECTOR, "#BillingNewAddress_FirstName")
+    BILLING_ADDRESS_LAST_NAME = (By.CSS_SELECTOR, "#BillingNewAddress_LastName")
+    BILLING_ADDRESS_EMAIL = (By.CSS_SELECTOR, "#BillingNewAddress_Email")
+    BILLING_ADDRESS_COUNTRY_DROPDOWN = (By.CSS_SELECTOR, "select#BillingNewAddress_CountryId")
+    BILLING_ADDRESS_CITY = (By.CSS_SELECTOR, "#BillingNewAddress_City")
+    BILLING_ADDRESS_ADDRESS = (By.CSS_SELECTOR, "#BillingNewAddress_Address1")
+    BILLING_ADDRESS_ZIP_CODE = (By.CSS_SELECTOR, "#BillingNewAddress_ZipPostalCode")
+    BILLING_ADDRESS_PHONE_NUMBER = (By.CSS_SELECTOR, "#BillingNewAddress_PhoneNumber")
+    BILLING_ADDRESS_CONTINUE = (By.CSS_SELECTOR, ".button-1.new-address-next-step-button:nth-child(1)")
+    SHIPPING_ADDRESS_CONTINUE = (By.CSS_SELECTOR, ".button-1.new-address-next-step-button:nth-child(2)")
+    SHIPPING_METHOD_CONTINUE = (By.CSS_SELECTOR, ".button-1.shipping-method-next-step-button")
+    PAYMENT_METHOD_CONTINUE = (By.CSS_SELECTOR, ".button-1.payment-method-next-step-button")
+    PAYMENT_INFORMATION_CONTINUE = (By.CSS_SELECTOR, ".button-1.payment-info-next-step-button")
+    CONFIRM_ORDER_BUTTON = (By.CSS_SELECTOR, ".button-1.confirm-order-next-step-button")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".order-completed strong")
