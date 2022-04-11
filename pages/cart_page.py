@@ -46,3 +46,10 @@ class CartPage(BasePage):
 
     def get_price(self):
         return self.get_page_element(*CartPageLocators.PRODUCT_UNIT_PRICE).text
+
+    def check_terms_of_service_checkbox(self):
+        self.get_page_element(*CartPageLocators.AGREEMENT_CHECKBOX).click()
+
+    def click_checkout_button(self):
+        self.get_page_element(*CartPageLocators.CHECKOUT_BUTTON).click()
+
